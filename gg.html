@@ -826,7 +826,16 @@
             </p>
           </div>
           <div class="contact-grid">
-            <form class="contact-form" name="contact" method="POST" data-netlify="true">
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/xpwjgrap"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New submission from your portfolio!"
+              />
               <div class="form-group">
                 <input type="text" name="name" placeholder="Your Name" required />
               </div>
