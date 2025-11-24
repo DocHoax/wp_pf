@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://your-domain.example/sitemap.xml
+
+# Optional: block search indexing of staging or private folders
+# Disallow: /wp-admin/
+# Disallow: /private/

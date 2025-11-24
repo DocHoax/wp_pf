@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad - WordPress Developer in Lagos, Nigeria</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="Muhammad — WordPress & E‑commerce developer in Lagos. I build fast, responsive sites and online stores (WooCommerce, Shopify). Get a reliable, performance-first website tailored to your business."
+    />
+    <meta name="author" content="Muhammad" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="/" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Muhammad — WordPress Developer in Lagos, Nigeria"
+    />
+    <meta
+      property="og:description"
+      content="I build fast, responsive, and user-friendly WordPress and E‑commerce websites for Nigerian businesses."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="me.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Muhammad — WordPress Developer in Lagos, Nigeria"
+    />
+    <meta
+      name="twitter:description"
+      content="I build fast, responsive, and user-friendly WordPress and E‑commerce websites for Nigerian businesses."
+    />
+    <meta name="twitter:image" content="me.jpg" />
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Muhammad — WordPress Developer",
+            "url": "/"
+          },
+          {
+            "@type": "Person",
+            "name": "Muhammad",
+            "jobTitle": "WordPress & E-commerce Developer",
+            "url": "/",
+            "sameAs": [
+              "https://x.com/MuhdOlawale",
+              "https://github.com/DocHoax"
+            ]
+          }
+        ]
+      }
+    </script>
+    <!-- Performance: preconnect to icons CDN and preload the primary portrait to avoid layout shift -->
+    <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
+    <link rel="preload" as="image" href="me.jpg" />
+    <!-- Sitemap link for crawlers and convenience -->
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml"
+    />
+    <style>
+      /* --- GLOBAL STYLES & THEME --- */
+      :root {
+        --background-color: #ffffff;
+        --primary-text-color: #111111;
+        --heading-color: #000000;
+        --accent-color: #808080;
+        --border-color: #eaeaea;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--background-color);
+        color: var(--primary-text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--heading-color);
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      /* Fluid / responsive typography */
+      h1 {
+        font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+      }
+      h2 {
+        font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      section {
+        padding: 80px 0;
+      }
+      a {
+        text-decoration: none;
+        color: var(--primary-text-color);
+      }
+
+      /* --- ANIMATIONS --- */
+      :root {
+        --anim-duration-fast: 320ms;
+        --anim-duration-medium: 480ms;
+        --anim-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .animate {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity var(--anim-duration-medium) var(--anim-ease),
+          transform var(--anim-duration-medium) var(--anim-ease);
+        will-change: opacity, transform;
+      }
+      .animate.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      /* children stagger helper: apply delayed transitions when parent becomes visible */
+      .animate > * {
+        transition: opacity var(--anim-duration-medium) var(--anim-ease),
+          transform var(--anim-duration-medium) var(--anim-ease);
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      .animate.is-visible > * {
+        opacity: 1;
+        transform: none;
+      }
+      /* Zoom modifier */
+      .animate--zoom {
+        transform: scale(0.96) translateY(6px);
+      }
+      .animate--zoom.is-visible {
+        transform: none;
+        transition: transform var(--anim-duration-medium) var(--anim-ease),
+          opacity var(--anim-duration-medium) var(--anim-ease);
+      }
+      .animate--zoom > * {
+        transform: scale(0.98) translateY(6px);
+      }
+      .animate--zoom.is-visible > * {
+        transform: none;
+      }
+      /* Fade row modifier - items fade in left-to-right using inline stagger */
+      .animate--fade-row {
+        transform: none;
+      }
+      .animate--fade-row > * {
+        transform: translateY(0) translateX(-8px);
+        opacity: 0;
+      }
+      .animate--fade-row.is-visible > * {
+        transform: none;
+        opacity: 1;
+      }
+
+      /* --- HEADER & NAVIGATION --- */
+      .header {
+        background: var(--background-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: "Poppins", "Inter", system-ui, -apple-system, "Segoe UI",
+          Roboto, Arial, sans-serif;
+      }
+
+      .navbar .nav-links {
+        list-style: none;
+        display: flex;
+      }
+
+      .navbar .nav-links li {
+        margin-left: 30px;
+      }
+
+      .navbar .nav-links a {
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: var(--primary-text-color);
+        padding: 6px;
+      }
+
+      /* accessible hidden label for screen readers */
+      .visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+        border: 0;
+        padding: 0;
+        margin: -1px;
+      }
+
+      .navbar .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Mobile Menu - Hidden by default */
+      .menu-toggle {
+        display: none;
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 40px 0;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin: 20px 0 30px;
+        color: var(--accent-color);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        font-weight: 600;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background: var(--heading-color);
+        color: var(--background-color);
+        border: 1px solid var(--heading-color);
+      }
+
+      .btn-primary:hover {
+        background: var(--background-color);
+        color: var(--heading-color);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--heading-color);
+        border: 1px solid var(--heading-color);
+        margin-left: 15px;
+      }
+
+      .btn-secondary:hover {
+        background: var(--heading-color);
+        color: var(--background-color);
+      }
+
+      /* --- TOOLKIT SECTION --- */
+      .toolkit {
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .toolkit-logos {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .toolkit-logos img {
+        height: 40px;
+        opacity: 0.9;
+        transition: opacity 0.3s ease, transform 0.2s ease;
+      }
+
+      .toolkit-logos img:hover {
+        opacity: 1;
+      }
+
+      /* --- SERVICES SECTION --- */
+      .section-header {
+        text-align: center;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-top: 50px;
+      }
+
+      .service-card {
+        border: 1px solid var(--border-color);
+        padding: 30px;
+        border-radius: 5px;
+      }
+
+      /* --- PORTFOLIO SECTION --- */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .portfolio-card {
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .portfolio-card img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background-color: var(--border-color);
+      }
+
+      .portfolio-content {
+        padding: 20px;
+      }
+
+      .portfolio-content .tags {
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        margin-top: 10px;
+      }
+
+      /* --- ABOUT SECTION --- */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 100%;
+      }
+      .about-image img {
+        width: 100%;
+        height: auto; /* allow natural height */
+        max-height: 520px; /* cap for very large screens */
+        object-fit: cover;
+        border-radius: 16px;
+        display: block;
+        background-color: var(--border-color);
+        box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .about-image img:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 48px rgba(16, 24, 40, 0.12);
+      }
+
+      /* --- CONTACT SECTION --- */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .contact-form .form-group {
+        margin-bottom: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid var(--border-color);
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+      }
+
+      .contact-details .detail-item {
+        margin-bottom: 20px;
+      }
+
+      .contact-details .detail-item strong {
+        display: block;
+        color: var(--accent-color);
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+      }
+
+      /* --- FOOTER --- */
+      .footer {
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        color: var(--accent-color);
+      }
+
+      /* --- RESPONSIVE DESIGN --- */
+      @media (max-width: 768px) {
+        h1,
+        h2,
+        h3 {
+          color: var(--heading-color);
+          line-height: 1.2;
+          margin-bottom: 20px;
+          font-family: "Poppins", "Inter", system-ui, -apple-system, "Segoe UI",
+            Roboto, Arial, sans-serif;
+        }
+        .menu-toggle {
+          display: block;
+          font-size: 1.5rem;
+          cursor: pointer;
+          z-index: 1001; /* Above nav links */
+        }
+
+        .nav-links {
+          display: none; /* Will be toggled by JS in a real site */
+        }
+
+        .services-grid,
+        .portfolio-grid,
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-grid {
+          text-align: center;
+          gap: 30px;
+        }
+
+        .about-image {
+          margin: 0 auto;
+        }
+
+        /* make nav icons larger and easier to tap */
+        .navbar .nav-links a svg {
+          width: 26px;
+          height: 26px;
+        }
+        .navbar .nav-links a {
+          padding: 10px; /* larger touch area */
+        }
+        .toolkit-logos {
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-content .btn {
+          display: block;
+          margin: 10px 0;
+        }
+        .btn-secondary {
+          margin-left: 0;
+        }
+        /* tighter layout for very small screens */
+        .container {
+          padding: 0 12px;
+        }
+        .navbar {
+          gap: 10px;
+        }
+        .logo {
+          font-size: 1.25rem;
+        }
+        .toolkit-logos img {
+          height: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar container">
+        <a href="#" class="logo">Muhammad</a>
+        <ul class="nav-links">
+          <li>
+            <a href="#home" aria-label="Home">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"
+                ></path>
+              </svg>
+              <span class="visually-hidden">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#services" aria-label="Services">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 2v6"></path>
+                <path d="M5 8v6a7 7 0 0 0 14 0V8"></path>
+                <path d="M3 14h18"></path>
+              </svg>
+              <span class="visually-hidden">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="#portfolio" aria-label="Portfolio">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="14" rx="2"></rect>
+                <path d="M8 21h8"></path>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              </svg>
+              <span class="visually-hidden">Portfolio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about" aria-label="About">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="8" r="3"></circle>
+                <path d="M6 20v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1"></path>
+              </svg>
+              <span class="visually-hidden">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" aria-label="Contact">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 10a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.2 8.38 8.38 0 0 1-3.8-.9L3 21l2.9-6.7A8.38 8.38 0 0 1 6 10"
+                />
+                <path d="M22 2l-5 5" />
+              </svg>
+              <span class="visually-hidden">Contact</span>
+            </a>
+          </li>
+        </ul>
+        <div class="menu-toggle">☰</div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero animate">
+        <div class="hero-content container">
+          <h1>Building High-Performance Websites for Nigerian Businesses.</h1>
+          <p>
+            I'm Muhammad, a WordPress and E-commerce developer based in Lagos. I
+            create fast, responsive, and user-friendly websites that help brands
+            grow and succeed online.
+          </p>
+          <a href="#portfolio" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </section>
+
+      <section class="toolkit animate animate--fade-row" data-stagger="40">
+        <div class="container">
+          <h2>My Toolkit</h2>
+          <div class="toolkit-logos">
+            <img
+              src="https://cdn.simpleicons.org/wordpress/21759b"
+              alt="WordPress Logo"
+            />
+            <img
+              src="https://cdn.simpleicons.org/woocommerce/96588a"
+              alt="WooCommerce Logo"
+            />
+            <img
+              src="https://cdn.simpleicons.org/shopify/7ab55c"
+              alt="Shopify Logo"
+            />
+            <img
+              src="https://cdn.simpleicons.org/elementor/ef3b8c"
+              alt="Elementor Logo"
+            />
+            <img src="https://cdn.simpleicons.org/wix/ffd200" alt="Wix Logo" />
+            <img src="https://cdn.simpleicons.org/php/777bb4" alt="PHP Logo" />
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="animate">
+        <div class="container">
+          <div class="section-header">
+            <h2>How I Can Help Your Business</h2>
+            <p>
+              From custom corporate websites to powerful online stores, I offer
+              a range of services.
+            </p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <h3>Custom WordPress Development</h3>
+              <p>
+                I build bespoke WordPress websites from the ground up, tailored
+                to your needs for scalability, security, and performance.
+              </p>
+            </div>
+            <div class="service-card">
+              <h3>E-commerce Solutions</h3>
+              <p>
+                I create robust online stores using WooCommerce and Shopify,
+                including integration with Nigerian payment gateways like
+                Paystack.
+              </p>
+            </div>
+            <div class="service-card">
+              <h3>Page Builder Expertise</h3>
+              <p>
+                Using Elementor and Wix, I design pixel-perfect websites that
+                you can easily manage and update yourself without needing to
+                code.
+              </p>
+            </div>
+            <div class="service-card">
+              <h3>Shopify Theme Customization</h3>
+              <p>
+                I extend the power of Shopify with custom theme development and
+                modifications using Liquid to create a unique storefront.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="portfolio"
+        class="animate animate--zoom"
+        style="background-color: #fafafa"
+        data-stagger="50"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2>Featured Work</h2>
+            <p>Here are a few projects I've recently worked on.</p>
+          </div>
+          <div class="portfolio-grid">
+            <div class="portfolio-card">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60"
+                alt="Portfolio Project 1 - E-commerce site"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="portfolio-content">
+                <h3>E-commerce for Lagos Fashion Brand</h3>
+                <p>
+                  A complete online store on Shopify with a custom lookbook and
+                  Paystack integration.
+                </p>
+                <div class="tags">Shopify, Liquid</div>
+              </div>
+            </div>
+            <div class="portfolio-card">
+              <img
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=60"
+                alt="Portfolio Project 2 - Corporate website"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="portfolio-content">
+                <h3>Website for Logistics Company</h3>
+                <p>
+                  A professional WordPress site for a Lagos-based firm, focusing
+                  on lead generation.
+                </p>
+                <div class="tags">WordPress, Elementor</div>
+              </div>
+            </div>
+            <div class="portfolio-card">
+              <img
+                src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=800&q=60"
+                alt="Portfolio Project 3 - Photographer portfolio"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="portfolio-content">
+                <h3>Portfolio for a Photographer</h3>
+                <p>
+                  A minimalist portfolio with fast-loading galleries and a
+                  simple booking form.
+                </p>
+                <div class="tags">WordPress, Elementor Pro</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="animate">
+        <div class="container about-grid">
+          <div class="about-image">
+            <img
+              src="me.jpg"
+              alt="Muhammad portrait"
+              width="400"
+              height="400"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="about-content">
+            <h2>Hello, I'm Muhammad.</h2>
+            <p>
+              From my base here in the heart of Lagos, I partner with businesses
+              to create impactful digital experiences. My passion lies in the
+              intersection of clean design and powerful functionality. I believe
+              a good website should not only look great but also be intuitive,
+              fast, and achieve clear business goals.
+            </p>
+            <p>
+              My development process is collaborative. I listen to your needs,
+              understand your audience, and build a website that serves as a
+              powerful tool for your growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="animate" style="background-color: #fafafa">
+        <div class="container">
+          <div class="section-header">
+            <h2>Let's Build Something Great Together</h2>
+            <p>
+              Have a project in mind? Or just want to say hello? I'd love to
+              hear from you.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  rows="6"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+            <div class="contact-details">
+              <div class="detail-item">
+                <strong>EMAIL</strong>
+                <p>sonofadam612@gmail.com</p>
+              </div>
+              <div class="detail-item">
+                <strong>PHONE</strong>
+                <p>+234 8123123352</p>
+              </div>
+              <div class="detail-item">
+                <strong>LOCATION</strong>
+                <p>Lagos, Nigeria.<br />Available for remote work globally.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Muhammad. A WordPress Developer Based in Lagos, Nigeria.</p>
+      </div>
+    </footer>
+    <!-- Hover-swap toolkit script removed (icons use colored srcs) -->
+    <script>
+      // Scroll reveal for elements with .animate
+      (function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const el = entry.target;
+                el.classList.add("is-visible");
+                // stagger children
+                const children = Array.from(el.children);
+                children.forEach((child, i) => {
+                  child.style.transitionDelay = `${i * 80}ms`;
+                });
+                observer.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        document
+          .querySelectorAll(".animate")
+          .forEach((el) => observer.observe(el));
+      })();
+    </script>
+  </body>
+</html>
