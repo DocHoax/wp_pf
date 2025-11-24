@@ -9,6 +9,8 @@
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json" />
     <meta
       name="description"
       content="Muhammad — WordPress & E‑commerce developer in Lagos. I build fast, responsive sites and online stores (WooCommerce, Shopify). Get a reliable, performance-first website tailored to your business."
@@ -824,15 +826,16 @@
             </p>
           </div>
           <div class="contact-grid">
-            <form class="contact-form">
+            <form class="contact-form" name="contact" method="POST" data-netlify="true">
               <div class="form-group">
-                <input type="text" placeholder="Your Name" required />
+                <input type="text" name="name" placeholder="Your Name" required />
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Your Email" required />
+                <input type="email" name="email" placeholder="Your Email" required />
               </div>
               <div class="form-group">
                 <textarea
+                  name="message"
                   rows="6"
                   placeholder="Your Message"
                   required
