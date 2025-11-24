@@ -6,28 +6,4 @@
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
-  <url>
-  <loc>https://your-domain.example/#services</loc>
-    <lastmod>2025-09-26T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-  <loc>https://your-domain.example/#portfolio</loc>
-    <lastmod>2025-09-26T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-  <loc>https://your-domain.example/#about</loc>
-    <lastmod>2025-09-26T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-  <loc>https://your-domain.example/#contact</loc>
-    <lastmod>2025-09-26T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
 </urlset>
